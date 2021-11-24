@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Title-->
+    <title>Student Management System</title>
+    <!-- CSS File-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+
+<body style="background-color: skyblue">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#reg">Registration</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    <CENTER>
+        <h2>Student Management System</h2>
+    </CENTER>
+
+    <div id="home" class="clgdet" >
+        <p>Walchand College of Engineering is situated midway between Sangli and Miraj cities at Vishrambag, Sangli. The WCE campus is located on about 90 acres of land on southern side of Sangli – Miraj road.
+
+            In 1947, the college made a modest beginning as New Engineering College, with a single program leading to B.E. (Civil) degree. In the year 1955, the College was renamed as Walchand College of Engineering as part of the new arrangements and pursuant to the Rehabilitation and Development Program mainly funded by Seth Walchand Hirachand Memorial Trust and the Government. The Government appointed an Ad Hoc Committee for conducting the college from May 1955, later replaced by the Administrative Council in 1956. The Ad Hoc Committee added two more degree programs in B.E. (Mechanical) and B.E. (Electrical) in 1955 with the intake of 20 each. Three Diploma programs also started in 1955 – Civil (40 intake), Mechanical (20) and Electrical (20).
+           
+           Post Graduate programs in Civil, Mechanical and Electrical Engineering and Diploma program in Industrial Electronics were introduced in 1971. In 1986 the UG and PG programs in Electronics Engineering and UG program in Computer Science and Engineering were introduced. 
+           
+           PG program in CSE was introduced in 1997. In 2001, added B.E. program in Information Technology with an intake of 60 students. An additional intake of 30 students was also sanctioned for Computer Science & Engineering program, resulting in total intake of 390 students for all branches at UG level and 106 at PG level. As part of strategic planning, PG section is being strengthened and PG intake has now steadily risen to 240 across 10 programs. The College has a QIP scheme for full-time doctoral programs and also offers Ph. D. programs of Shivaji University in various branches of engineering.
+           
+           Walchand College of Engineering became autonomous in 2007. The college revamped its academic structure and contents, in consultation with few US and IIT academic experts. Accordingly nomenclature of B.E and M.E programs has been changed to B Tech and M Tech programs. After completion of the first term of six years, the College has now received extension of autonomous status for the second term of six years till 2019-20. It participated in the World Bank funded, Government of India scheme, namely, Technical Education Quality Improvement Program (TEQIP) in Phase I from 2005-2009, wherein it stood all-India 2nd out of 127 participating institutions in terms of program impact performance. The college is presently participating in Phase II of TEQIP with outstanding performance            
+           VISION</p>
+
+           <img width="400px" height="400px" src="data:image/jpeg;base64,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" alt="">
+           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT60GrN-iKkw-6MmHBFPykGqXO38ajx1jlSGuen4bejfpzUGjHquyzNNRzzxJ3eXHFw4o8&usqp=CAU" alt="" width="400px" height="400px">
+           <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdHX4V-GLjsnZzi2MNwW0vxD4zLVALuOFjKw&usqp=CAU" alt="" width="400px" height="400px">
+    </div>
+    <!--Table-->
+    <table class="reg" id="reg">
+        <!--Row-1-->
+        <tr>
+            <!--Column-1-->
+            <td>
+                <!--Form-->
+                <form  onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <h3>Student Form</h3>
+                    <!--div-1-->
+                    <div>
+                        <label>Full Name</label>
+                        <!--Validation Error-->
+                        <label class="validation-error hide" id="userNamevalidationError">This field is required</label>
+                        <!--Input User Name-->
+                        <input type="text" name="userName" id="userName" placeholder="Enter the user Name">
+                    </div>
+                    <!--div-2-->
+                    <div>
+                        <label>Mobile NO</label>
+                        <!--Validation Error-->
+                        <label class="validation-error hide" id="rollNovalidationError">This field is required</label>
+                        <!--Input Roll No-->
+                        <input type="text" name="mob" id="mob" placeholder="Enter the Mobile number">
+                    </div>
+                    <div>
+                        <label>ID</label>
+                        <!--Validation Error-->
+                        <label class="validation-error hide" id="idvalidationError">This field is required</label>
+                        <!--Input Roll No-->
+                        <input type="text" name="id" id="id" placeholder="Enter the ID number">
+                    </div>
+                    <div>
+                        <label>Address</label>
+                        <!--Validation Error-->
+                        <label class="validation-error hide" id="addvalidationError">This field is required</label>
+                        <!--Input Roll No-->
+                        <input type="text" name="add" id="add" placeholder="Enter the Address">
+                    </div>
+                    <!--div-3-->
+                    <div>
+                        <label>Department</label>
+                        <!--Validation Error-->
+                        <label class="validation-error hide" id="deptvalidationError">This field is required</label>
+                        <!--Input Student Class-->
+                        <input type="text" name="dept" id="dept" placeholder="Enter the Department">
+                    </div>
+                    <!--div-4-->
+                    <div>
+                        <label>Class</label>
+                        <!--Validation Error-->
+                        <label class="validation-error hide" id="classvalidationError">This field is required</label>
+                        <!--Input Total Subject-->
+                        <input type="number" name="stdClass" id="stdClass" placeholder="Enter your class">
+                    </div>
+                    <!--div-5-->
+                    <div>
+                        <label>Password</label>
+                        <!--Validation Error-->
+                        <label class="validation-error hide" id="passvalidationError">This field is required</label>
+                        <!--Input Age-->
+                        <input type="password" name="pass" id="pass" placeholder="Enter Password">
+                    </div>
+                    <!--div-6-->
+                    <div class="form-action-buttons">
+                        <!--Input Button-->
+                        <input type="submit" value="Submit">
+                    </div>
+                </form>
+            </td>
+            <!--Column-2-->
+            <td>
+                <!--Nested Table-->
+                <table class="list" id="stdlist" style="background-color: #C2976D;">
+                    <!--Table Head-->
+                    <thead>
+                        <!--Row-2-->
+                        <tr>
+                            <th>Full Name</th>
+                            <th>Mobile no</th>
+                            <th>ID</th>
+                            <th>Address</th>
+                            <th>Department</th>
+                            <th>Class</th>
+                            <th>Password</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <!--Table Body-->
+                    <tbody>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+
+    <script>
+        var selectedRow = null
+ 
+ // Form Submit Function
+ function onFormSubmit() {
+     // check validity
+     if (validate()) {
+         // store user data
+         var formData = readFormData();
+         // check empty row
+         if (selectedRow == null)
+         {
+             // Insert New User Record
+             insertNewRecord(formData);
+         }
+         else
+         {
+             // Update New User Record
+             updateRecord(formData);
+         }
+         // Reset Input Values
+         resetForm();
+     }
+ }
+ // Get Values From Form
+ function readFormData() {
+     var formData = {};
+     // Get Values From  Input
+     formData["userName"] = document.getElementById("userName").value;
+     formData["mobileno"] = document.getElementById("mob").value;
+     formData["id"] = document.getElementById("id").value;
+     formData["address"] = document.getElementById("add").value;
+     formData["department"] = document.getElementById("dept").value;
+     formData["class"] = document.getElementById("stdClass").value;
+     formData["password"] = document.getElementById("pass").value;
+     // return Form Data
+     return formData;
+ }
+ // Insert New User Record
+ function insertNewRecord(data) {
+     var table = document.getElementById("stdlist").getElementsByTagName('tbody')[0];
+     var newRow = table.insertRow(table.length);
+     cell1 = newRow.insertCell(0);
+     cell1.innerHTML = data.userName;
+     cell2 = newRow.insertCell(1);
+     cell2.innerHTML = data.mobileno;
+     cell3 = newRow.insertCell(2);
+     cell3.innerHTML = data.id;
+     cell4 = newRow.insertCell(3);
+     cell4.innerHTML = data.address;
+     cell5 = newRow.insertCell(4);
+     cell5.innerHTML = data.department;
+     cell4 = newRow.insertCell(5);
+     cell4.innerHTML = data.class;
+     cell5 = newRow.insertCell(6);
+     cell5.innerHTML = data.password;
+     cell5 = newRow.insertCell(7);
+     cell5.innerHTML = `<a onClick="onEdit(this)">Edit</a>
+     <a onClick="onDelete(this)">Delete</a>`;
+ }
+ // Reset Function
+ function resetForm() {
+     document.getElementById("userName").value = "";
+     document.getElementById("mob").value = "";
+     document.getElementById("id").value = "";
+     document.getElementById("add").value = "";
+     document.getElementById("dept").value = "";
+     document.getElementById("stdclass").value = "";
+     document.getElementById("pass").value = "";
+     selectedRow = null;
+ }
+ // Edit Function
+ function onEdit(td) {
+     selectedRow = td.parentElement.parentElement;
+     document.getElementById("userName").value = selectedRow.cells[0].innerHTML;
+     document.getElementById("mob").value = selectedRow.cells[1].innerHTML;
+     document.getElementById("id").value = selectedRow.cells[2].innerHTML;
+     document.getElementById("add").value = selectedRow.cells[3].innerHTML;
+     document.getElementById("dept").value = selectedRow.cells[4].innerHTML;
+     document.getElementById("stdclass").value = selectedRow.cells[5].innerHTML;
+     document.getElementById("pass").value = selectedRow.cells[6].innerHTML;
+ }
+ // Update Record
+ function updateRecord(formData) {
+     selectedRow.cells[0].innerHTML = formData.userName;
+     selectedRow.cells[1].innerHTML = formData.mob;
+     selectedRow.cells[2].innerHTML = formData.id;
+     selectedRow.cells[3].innerHTML = formData.add;
+     selectedRow.cells[4].innerHTML = formData.dept;
+     selectedRow.cells[3].innerHTML = formData.stdclass;
+     selectedRow.cells[4].innerHTML = formData.pass;
+ }
+ // Delete Function
+ function onDelete(td) {
+     if (confirm('Are you sure to delete this record ?')) {
+         row = td.parentElement.parentElement;
+         document.getElementById("stdlist").deleteRow(row.rowIndex);
+         resetForm();
+     }
+ }
+ // Check User validation
+ function validate() {
+     isValid = true;
+     // userName validation
+     if (document.getElementById("userName").value == "") {
+         isValid = false;
+         document.getElementById("userNamevalidationError").classList.remove("hide");
+     } else {
+         isValid = true;
+         if (!document.getElementById("userNamevalidationError").classList.contains("hide"))
+         {
+             document.getElementById("userNamevalidationError").classList.add("hide");
+         }
+     }
+     // Roll No validation
+        if (document.getElementById("id").value == "") {
+            isValid = false;
+            document.getElementById("idvalidationError").classList.remove("hide");
+        } else {
+            isValid = true;
+            if (!document.getElementById("idvalidationError").classList.contains("hide"))
+            {
+                document.getElementById("idvalidationError").classList.add("hide");
+            }
+        }
+     // Tsub validation
+     if (document.getElementById("pass").value == "") {
+         isValid = false;
+         document.getElementById("passvalidationError").classList.remove("hide");
+     } else {
+         isValid = true;
+         if (!document.getElementById("passvalidationError").classList.contains("hide"))
+         {
+             document.getElementById("passvalidationError").classList.add("hide");
+         }
+     }
+     // Age validation
+     if (document.getElementById("dept").value == "") {
+         isValid = false;
+         document.getElementById("deptvalidationError").classList.remove("hide");
+     } else {
+         isValid = true;
+         if (!document.getElementById("deptvalidationError").classList.contains("hide"))
+         {
+             document.getElementById("deptvalidationError").classList.add("hide");
+         }
+     }
+     return isValid;
+ }
+    </script>
